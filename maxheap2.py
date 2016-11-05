@@ -1,5 +1,12 @@
-'''@author : Harnek'''
+'''@author : https://github.com/Harnek
 
+class MaxHeap:
+    methods:
+        insert(item)
+        maxi()
+        extract_maxi()
+        height()
+'''
 """
 -------+-------++---------+
 Indexed|   1   ||    0    |
@@ -10,7 +17,7 @@ Right  | 2*i+1 || (2*i)+2 |
 -------+-------++---------+
 """
 
-class MaxHeap():
+class MaxHeap:
 
     def __init__(self, a = []):
         self.a = a
@@ -78,6 +85,14 @@ class MaxHeap():
             self.MaxHeapifyDown(0)
             return temp
         return False
+
+    """returns height of tree"""
+    def height(self):
+        h = i = 0
+        while i <= self.size and self.array[i]:
+            h += 1
+            i = (2*i) + 1
+        return h        
 
     """Returns index of parent"""
     def parent(self, i):
