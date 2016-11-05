@@ -3,9 +3,10 @@
 class MaxHeap:
     methods:
         insert(item)
-        maxi()
-        extract_maxi()
+        maxx()
+        extract_max()
         height()
+        len()
 '''
 """
 -------+-------++---------+
@@ -70,13 +71,13 @@ class MaxHeap:
             self.MaxHeapifyDown(i)    
 
     """Returns Max"""
-    def maxi(self):
+    def maxx(self):
         if self.a:
             return self.a[0]
         return False
 
     """Removes and Returns Max"""
-    def extract_maxi(self):
+    def extract_max(self):
         if self.size:
             temp = self.a[0]
             self.size -= 1
@@ -106,6 +107,8 @@ class MaxHeap:
     def right(self, i):
         return 2*i + 2
 
+    def __len__(self):
+        return self.size
 
     """Print Representation
              1
@@ -132,3 +135,4 @@ if __name__ == "__main__":
     ls = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     h = MaxHeap(ls)
     print(h)
+    print(len(h))
