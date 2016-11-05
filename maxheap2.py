@@ -1,3 +1,5 @@
+import random
+
 '''@author : https://github.com/Harnek
 
 class MaxHeap:
@@ -132,7 +134,7 @@ class MaxHeap:
         return p
 
 if __name__ == "__main__":
-    ls = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    ls = [random.randint(1, 100) for i in range(20)]
+    print(ls)
     h = MaxHeap(ls)
     print(h)
-    print(len(h))
