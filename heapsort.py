@@ -14,7 +14,7 @@ class HeapSort:
             self.BuildMaxHeap()
         self.Sort()
 
-    """Fix Heapify Property going upwards"""
+    """Fix Heapify Property Downwards"""
     def MaxHeapifyDown(self, i):
         j = self.left(i)
         while j < self.size:
