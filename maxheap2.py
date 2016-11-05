@@ -21,26 +21,41 @@ class MaxHeap():
 
     """Fix Heapify Property going upwards"""
     def MaxHeapifyDown(self, i):
-        largest = i
-        l = self.Left(i)
-        r = self.Right(i)
-        if l < self.size and self.a[l] > self.a[i]:
-            largest = l
-        if r < self.size and self.a[r] > self.a[largest]:
-            largest = r
-        if largest != i:
-            self.a[i], self.a[largest] = self.a[largest], self.a[i]
-            self.MaxHeapifyDown(largest)
+        j = self.left(i)
+        while j < self.size:
+            if j+1 < self.size and self.a[j] < self.a[j+1]:
+                j += 1
+            if self.a[i] < self.a[j]:
+                self.a[i], self.a[j] = self.a[j], self.a[i]
+                i = j
+                j = self.left(i)
+            else:
+                break
+        """Recursive Implementation"""
+        # largest = i
+        # l = self.Left(i)
+        # r = self.Right(i)
+        # if l < self.size and self.a[l] > self.a[i]:
+        #     largest = l
+        # if r < self.size and self.a[r] > self.a[largest]:
+        #     largest = r
+        # if largest != i:
+        #     self.a[i], self.a[largest] = self.a[largest], self.a[i]
+        #     self.MaxHeapifyDown(largest)
 
     """Fix Heapify Property going upwards"""
-    def MaxHeapifyUP():
-        pass
+    def MaxHeapifyUP(self, i):
+        p = self.parent(i)
+        while i > 0 and self.a[i] > self.a[p]:
+            self.a[i], self.a[p] = self.a[p], self.a[i]
+            i = p
+            p = self.parent(i)
 
     """insert new element at the end and heapifyUp"""
     def insert(self, item):
         self.size += 1
         self.a.append(item)
-        self.MaxHeapifyUP()
+        self.MaxHeapifyUP(self.size-1)
 
     """Build Max Heap From Array"""
     def BuildMaxHeap(self):
@@ -65,15 +80,15 @@ class MaxHeap():
         return False
 
     """Returns index of parent"""
-    def Parent(self, i):
+    def parent(self, i):
         return (i-1)//2    
 
     """Returns index of left child"""
-    def Left(self, i):
+    def left(self, i):
         return 2*i + 1
 
     """Returns index of right child"""
-    def Right(self, i):
+    def right(self, i):
         return 2*i + 2
 
 
