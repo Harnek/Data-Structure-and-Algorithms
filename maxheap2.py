@@ -1,24 +1,19 @@
-import random
-
 '''@author : https://github.com/Harnek
 
-class MaxHeap:
-    methods:
-        insert(item)
-        maxx()
-        extract_max()
-        height()
-        len()
+Implementation of MaxHeap
+
+Complexity:
+            Average   Worst case
+    Space   O(n)      O(n)
+    Search  O(n)      O(n)
+    Insert  O(1)      O(log n)
+    Delete  O(log n)  O(log n)
+    Peek    O(1)      O(1)
+
+Parent (i-1)/2
+Left   (2*i)+1
+Right  (2*i)+2
 '''
-"""
--------+-------++---------+
-Indexed|   1   ||    0    |
--------+-------++---------+
-Parent | i/2   || (i-1)/2 |
-Left   | 2*i   || (2*i)+1 |
-Right  | 2*i+1 || (2*i)+2 |
--------+-------++---------+
-"""
 
 class MaxHeap:
 
@@ -132,6 +127,8 @@ class MaxHeap:
                 rchild = 2*i+2
             i += 1
         return p
+
+import random
 
 if __name__ == "__main__":
     ls = [random.randint(1, 100) for i in range(20)]
