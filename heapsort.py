@@ -1,11 +1,9 @@
 '''@author : https://github.com/Harnek
 Implementation of HeapSort
-
 Complexity:
     Heapify()   O(log n)
     BuildHeap() O(n)
     HeapSort()  O(nLogn)
-
 '''
 
 '''Iterative'''
