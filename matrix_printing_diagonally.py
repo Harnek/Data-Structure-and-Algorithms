@@ -1,4 +1,5 @@
-'''@author : https://github.com/Harnek'''
+'''
+author : https://github.com/Harnek'''
 
 a = [[1, 2, 3, 4],
      [5, 6, 7, 8],
@@ -45,10 +46,10 @@ for i in range(r + c - 1):
     print()
 
 
-'''
+'''Also try
 Easier to print by understanding the pattern
 
-Obsering the pattern::
+Observing the pattern::
 +-------------------------+---------------------------+
 |   1  2  3  4            |            1  2  3  4     |
 |      5  6  7  8         |         5  6  7  8        |
