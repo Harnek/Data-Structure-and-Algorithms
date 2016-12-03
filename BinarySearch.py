@@ -1,20 +1,36 @@
-# Searching an element in a list/array in python
-# can be simply done using 'in' operator
-# Example:
-# if x in arr:
-# print arr.index(x)
-
-# If you want to implement Linear Search in python
-
-# Linearly search x in arr[]
-# If x is present then return its location
-# else return -1
-
-def search(arr, x):
-
-	for i in range(len(arr)):
-
-		if arr[i] == x:
-			return i
-
-	return -1
+# Iterative Binary Search Function
+# It returns location of x in given array arr if present,
+# else returns -1
+def binarySearch(arr, l, r, x):
+ 
+    while l <= r:
+ 
+        mid = l + (r - l)/2;
+         
+        # Check if x is present at mid
+        if arr[mid] == x:
+            return mid
+ 
+        # If x is greater, ignore left half
+        elif arr[mid] < x:
+            l = mid + 1
+ 
+        # If x is smaller, ignore right half
+        else:
+            r = mid - 1
+     
+    # If we reach here, then the element was not present
+    return -1
+ 
+ 
+# Test array
+arr = [ 2, 3, 4, 10, 40 ]
+x = 10
+ 
+# Function call
+result = binarySearch(arr, 0, len(arr)-1, x)
+ 
+if result != -1:
+    print "Element is present at index %d" % result
+else:
+    print "Element is not present in array"
