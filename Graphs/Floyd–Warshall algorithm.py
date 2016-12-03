@@ -1,4 +1,5 @@
-'''@author : https://github.com/Harnek
+'''
+author : https://github.com/Harnek
 Floyd–Warshall algorithm - All-pairs shortest path problem (for weighted graphs)
 
 Complexity: 
